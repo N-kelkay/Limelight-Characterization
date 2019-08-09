@@ -8,7 +8,6 @@ client = gspread.authorize(creds)
 
 pp = pprint.PrettyPrinter()
 dataCalc = client.open("Limelight Data Calculations").sheet1
-rawData = client.open("Limelight Data Calculations").get_worksheet(1)
 timeStamps = client.open("Limelight Data Calculations").get_worksheet(2)
 
 #Coverts a time stamp from minutes to miliseconds
