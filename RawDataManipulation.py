@@ -9,12 +9,6 @@ client = gspread.authorize(creds)
 pp = pprint.PrettyPrinter()
 rawData = client.open("Limelight Data Calculations").get_worksheet(1)
 
-camtranData = rawData.col_values(2)
-#pp.pprint(camtranData)
-camtranData.pop(0)
-listOfxzyaw = []
-
-fullList = camtranData[2000] #it's a string--> '[-12.42504555564065, 0.42380815721145304, -22.18154928200209, 2.2081758051849913, -31.255522674289537, -0.3133550209905969]'
 
 
 
@@ -29,3 +23,21 @@ def cutList (value):
         z = float(actualList[2].replace(" ", ""))
         yaw = float(actualList[4].replace(" ", ""))
         return [x, z, yaw]
+
+camtranData = rawData.col_values(2)
+#pp.pprint(camtranData)
+camtranData.pop(0)
+listOfxzyaw = []
+
+for x in camtranData: #x is a string of the values
+    returnValue = cutList(x)
+    listOfxzyaw.append(returnValue)
+
+# #Adds the trimmed list to the sheet
+# i = 0
+# while i <= len(listOfxzyaw):
+#     rawData.update_cell(2, 4, listOfxzyaw[i])
+#     i += 1
+
+
+pp.pprint(listOfxzyaw)
