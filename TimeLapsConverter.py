@@ -31,8 +31,7 @@ for x in columnAdata:
     listOfMiliSeconds.append(getMiliSec(x))
 
 #adds the time stamps into the time stamps sheet
-i = 0
-while i <= len(listOfMiliSeconds):
-    timeStamps.update_cell(i + 1, 3, listOfMiliSeconds[i])
-    i += 1
-
+# i = 0
+# while i <= len(listOfMiliSeconds):
+#     timeStamps.update_cell(i + 1, 3, listOfMiliSeconds[i])
+#     i += 1
