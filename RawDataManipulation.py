@@ -33,11 +33,20 @@ for x in camtranData: #x is a string of the values
     returnValue = cutList(x)
     listOfxzyaw.append(returnValue)
 
-# #Adds the trimmed list to the sheet
-# i = 0
-# while i <= len(listOfxzyaw):
-#     rawData.update_cell(2, 4, listOfxzyaw[i])
-#     i += 1
 
 
-pp.pprint(listOfxzyaw)
+#make each list of floats into values of strings
+listChange = listOfxzyaw[0][0]
+stringChange = "[" + str(listOfxzyaw[0][0]) + " " +  str(listOfxzyaw[0][1]) + " " + str(listOfxzyaw[0][2]) + "]"
+print(stringChange)
+
+
+#Adds the trimmed list to the sheet
+i = 0
+while i <= len(listOfxzyaw):
+    listChange = listOfxzyaw[0][0]
+    stringChange = "[" + str(listOfxzyaw[0][0]) + " " +  str(listOfxzyaw[0][1]) + " " + str(listOfxzyaw[0][2]) + "]"
+    print(stringChange)
+
+    rawData.update_cell(2, 4, listOfxzyaw[i])
+    i += 1
