@@ -31,8 +31,8 @@ for x in camtranData: #x is a string of the values
 
 #DANGEROUS CODE, DO NOT RUN (Last stoped on 2164)
 #Adds the trimmed list to the sheet 
-iList = 3513 #2163 
-while iList <= len(listOfxzyaw) - 3512: #(- 2162) needs to start at 2, 4
+iList = 4198 #2163 
+while iList <= len(listOfxzyaw) - 4197: #(- 2162) needs to start at 2, 4
     if len(listOfxzyaw[iList]) == 0:
         iList += 1
     else:
