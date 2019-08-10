@@ -31,19 +31,17 @@ listOfxzyaw = []
 
 for x in camtranData: #x is a string of the values
     returnValue = cutList(x)
-    listOfxzyaw.append(returnValue)
-
-print(len(listOfxzyaw[1]))
+    listOfxzyaw.append(returnValue) # one this to note 685(here) is actually 687(there), meaning this list is two indexes below
 
 
-
-#Adds the trimmed list to the sheet
-#It first converts the list into a string
-i = 0
-while i <= len(listOfxzyaw): #needs to start at 2, 4
-    if len(listOfxzyaw[i]) == 0:
-        i += 1
-    else:
-        toStringChg = "[" + str(listOfxzyaw[i][0]) + " " +  str(listOfxzyaw[i][1]) + " " + str(listOfxzyaw[i][2]) + "]"
-        rawData.update_cell(2 + i, 4, toStringChg)
-        i += 1
+#DANGEROUS CODE, DO NOT RUN (Last stoped on 2164)
+#Adds the trimmed list to the sheet 
+#print(listOfxzyaw[1923])
+# iList = 2163 
+# while iList <= len(listOfxzyaw) - 2162: #needs to start at 2, 4
+#     if len(listOfxzyaw[iList]) == 0:
+#         iList += 1
+#     else:
+#         toStringChg = "[" + str(listOfxzyaw[iList][0]) + " " +  str(listOfxzyaw[iList][1]) + " " + str(listOfxzyaw[iList][2]) + "]"
+#         rawData.update_cell(iList + 2, 4, toStringChg) # need to add 2 because the list here is 2 behind the list in the sheets
+#         iList += 1
